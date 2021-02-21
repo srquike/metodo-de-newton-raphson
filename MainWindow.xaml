@@ -1,0 +1,44 @@
+﻿<Window x:Class="metodo_de_newton_raphson.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:metodo_de_newton_raphson"
+        mc:Ignorable="d"
+        Title="Método de Newton-Raphson" Height="450" Width="620"
+        SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Valores" Grid.Column="0" Grid.Row="0" BorderBrush="Black" Margin="5" Padding="5">
+            <WrapPanel>
+                <TextBlock Text="X0 = "></TextBlock>
+                <TextBox x:Name="TxtValorX" Width="100" Margin="10,0"></TextBox>
+                <TextBlock Text="F(x) = "></TextBlock>
+                <TextBox Text="(e^-x)-x" Width="100" Margin="10,0"></TextBox>
+                <TextBlock Text="Error = "></TextBlock>
+                <TextBox Text="0.001" Width="100" Margin="10,0"></TextBox>
+                <Button x:Name="BtnCalcular" Padding="5,0" Content="Calcular" Margin="10,0" UseLayoutRounding="False" Click="BtnCalcular_Click"></Button>
+                <Button x:Name="BtnLimpiar" Padding="5,0" Content="Limpiar" Click="BtnLimpiar_Click"></Button>
+            </WrapPanel>
+        </GroupBox>
+        <GroupBox Header="Iteraciones" Grid.Column="0" Grid.Row="1" BorderBrush="Black" Margin="5" Padding="5">
+            <DataGrid x:Name="DgIteraciones" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="i" Binding="{Binding I}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Xi" Binding="{Binding Xi}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                    <DataGridTextColumn Header="F(x)" Binding="{Binding Fx}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                    <DataGridTextColumn Header="F'(x)" Binding="{Binding Dx}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Xi + 1" Binding="{Binding Xi1}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Error" Binding="{Binding Error}" CanUserSort="False" Width="98"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+    </Grid>
+</Window>

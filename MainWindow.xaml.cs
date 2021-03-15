@@ -62,7 +62,7 @@ namespace metodo_de_newton_raphson
                     iteracionAnterior = iteracion;
                     i++;
 
-                } while (iteracion.Error != 0);
+                } while (iteracion.Error != 0 && iteracion.Error != 0.001);
 
                 DgIteraciones.ItemsSource = iteraciones;
             }
